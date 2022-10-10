@@ -1,0 +1,21 @@
+apiVersion: apiconnect.ibm.com/v1beta1
+kind: APIConnectCluster
+metadata:
+  labels:
+    app.kubernetes.io/instance: apiconnect
+    app.kubernetes.io/managed-by: ibm-apiconnect
+    app.kubernetes.io/name: apiconnect-minimum
+  name: apis-tracing-2
+  namespace: cp4i
+spec:
+  license:
+    accept: true
+    use: nonproduction
+    license: L-RJON-CEBLEH
+  profile: n1xc7.m48
+  version: 10.0.5.1
+  storageClassName: ocs-storagecluster-ceph-rbd
+  gateway:
+    openTracing:
+      enabled: true
+      odTracingNamespace: cp4i
